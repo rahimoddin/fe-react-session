@@ -2,20 +2,56 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 
-// const element = document.createElement('div')
-// const txtELement = document.createTextNode('Some string for text node.')
+class Cart extends React.Component {
 
-// element.appendChild(txtELement)
 
-// document.getElementById('root').appendChild(element)
+    // eslint-disable-next-line no-useless-constructor
+    constructor(props) {
+        super(props)
+        //console.log('Cart:: props: ', this.props)
+    }
 
-// const childElement = React.createElement('h2', {}, 'I am heand')
+    render() {
+        return(<section>
+        <h2>My Cart</h2>
+        <div>
+            <div>Cart body</div>
+            <div>{`Total of the cart is ${this.props.total} and items added: ${this.props.count}`}</div>
+            <div>Items in cart</div>
+            <ul>
+                {this.props.items.map((item)=>{
+                    return <li>{item}</li>
+                })}
+            </ul>
+        </div>
+        </section>)
+    }
+}
+class Header extends React.Component {
+    
+    render() {
+        return <div>
+        <img src=""></img>
+            <ul>
+            <li>Home</li>
+            <li>Contact Me</li>
+            <li>About Me</li>
+        </ul>
+        </div>
+    }
+}
+class App extends React.Component {
+    render() {
+        return <div>
+        <h1>My Shopping Application</h1>
+        <Header></Header>
+        <Cart total={10023} count={3} items={["shoes", "Tshirt", "Cap"]}></Cart>
+        </div>
+    }
+} 
+ReactDOM.render(<App></App>, document.getElementById('root'))
 
-// const element = React.createElement('div', {id: 'container', className: 'container'}, 'Some text node for react element')
 
-const element = <div className="container"><h2>I am  heading</h2><div className="child">I am child</div></div>
-
-ReactDOM.render(element, document.getElementById('root'))
 
 
 
