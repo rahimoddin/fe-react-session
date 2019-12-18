@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 import Cart from './components/Cart'
 import Header from './components/Header'
 import Logo from './components/Logo'
+import ToggleButton from './components/ToggleButton'
+import BookList from './components/BookList'
 
 const data = {
     cart: {
@@ -23,10 +25,14 @@ class App extends React.Component {
         <h1>My Shopping Application</h1>
         <Header><Logo></Logo></Header>
         <Cart items={data.cart.items} total={data.cart.total}></Cart>
+
+        <ToggleButton></ToggleButton>
+        <BookList></BookList>
         </div>
     }
 } 
-ReactDOM.render(<App>fasfdasdfasdf</App>, document.getElementById('root'))
+ReactDOM.render(<App></App>, document.getElementById('root'))
+
 
 
 
