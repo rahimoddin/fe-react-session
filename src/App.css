@@ -1,5 +1,14 @@
 
 
+.yellow {
+    background-color: yellow;
+    padding: 5px;
+}
+.grey {
+    padding: 5px;
+    background-color: gray;
+}
+
 
 .list {
     display: inline-block;

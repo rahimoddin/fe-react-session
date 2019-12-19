@@ -6,7 +6,8 @@ class ToggleButton extends React.Component {
 
     constructor() {
         super()
-        this.state = {selected: false
+        this.state = {
+            selected: false
         }
         this.handleClick = this.handleClick.bind(this)
     }

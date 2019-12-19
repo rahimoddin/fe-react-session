@@ -5,6 +5,8 @@ import Header from './components/Header'
 import Logo from './components/Logo'
 import ToggleButton from './components/ToggleButton'
 import BookList from './components/BookList'
+import Ratings from './components/Ratings'
+import './app.css'
 
 const data = {
     cart: {
@@ -28,6 +30,7 @@ class App extends React.Component {
 
         <ToggleButton></ToggleButton>
         <BookList></BookList>
+        <Ratings numStars={5}></Ratings>
         </div>
     }
 } 
