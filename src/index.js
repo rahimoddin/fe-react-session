@@ -1,12 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Cart from './components/Cart'
-import Header from './components/Header'
-import Logo from './components/Logo'
-import ToggleButton from './components/ToggleButton'
-import BookList from './components/BookList'
 import Ratings from './components/Ratings'
 import './app.css'
+import DigiClock from './components/DigiClock'
+import Library from './book/Library'
 
 const data = {
     cart: {
@@ -22,15 +19,28 @@ const data = {
 
 
 class App extends React.Component {
+
+    constructor() {
+        super()
+        this.state = {
+            showClock: false
+        }
+        this.showHideClock = this.showHideClock.bind(this)
+    }
+
+    showHideClock() {
+        this.setState({
+            showClock: !this.state.showClock
+        })
+    }
+
+
     render() {
         return <div>
-        <h1>My Shopping Application</h1>
-        <Header><Logo></Logo></Header>
-        <Cart items={data.cart.items} total={data.cart.total}></Cart>
-
-        <ToggleButton></ToggleButton>
-        <BookList></BookList>
+        <Library></Library>
         <Ratings numStars={5}></Ratings>
+        {this.state.showClock && <DigiClock></DigiClock>}
+        <button onClick={this.showHideClock}>Show/Hide Clock</button>
         </div>
     }
 } 
