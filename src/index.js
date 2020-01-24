@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Ratings from './components/Ratings'
-import './app.css'
+import './App.css'
 import DigiClock from './components/DigiClock'
 import Library from './book/Library'
 
